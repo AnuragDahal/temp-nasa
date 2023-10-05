@@ -6,6 +6,7 @@ const nextConfig = {
       "firebasestorage.googleapis.com",
       "avatars.githubusercontent.com",
       "github-profile-summary-cards.vercel.app",
+      'lh3.googleusercontent.com'
     ],
   },
 };

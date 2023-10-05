@@ -11,7 +11,7 @@ import axios from "axios";
 import { useState } from "react";
 import { toast } from "react-toastify";
 
-const GithubLoginButton = ({ displayText }) => {
+const GithubLoginButton = () => {
   const [isloggingIn, setIsLoggingIn] = useState(false);
   const { setUserAuthDetails, setUserDetails, app, setIsUserLoggedIn } =
     useGlobalContext();
@@ -194,7 +194,7 @@ const GithubLoginButton = ({ displayText }) => {
               </svg>
               <span className="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-blue-600 sm:text-base">
                 {" "}
-                {displayText}
+                Continue with Github
               </span>
             </>
           )}

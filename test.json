@@ -1,0 +1,71 @@
+{
+  "inbox": [
+    {
+      "converstaionId": 1,
+      "users": ["user1", "user2"],
+      "messages": [
+        {
+          "sender": "user1",
+          "message": "Hello",
+          "isSeen": true
+        },
+        {
+          "sender": "user2",
+          "message": "Hi",
+          "isSeen": false
+        }
+      ]
+    },
+    {
+      "converstaionId": 2,
+      "users": ["user1", "user3"],
+      "messages": [
+        {
+          "sender": "user1",
+          "message": "Hello",
+          "isSeen": true
+        },
+        {
+          "sender": "user3",
+          "message": "Hi",
+          "isSeen": false
+        }
+      ]
+    }
+  ],
+  "discussion": [
+    {
+      "converstaionId": 1,
+      "projectId": 1,
+      "users": ["user1", "user2"],
+      "messages": [
+        {
+          "sender": "user1",
+          "message": "Hello",
+          "isSeen": true
+        },
+        {
+          "sender": "user2",
+          "message": "Hi",
+          "isSeen": false
+        }
+      ]
+    },
+    {
+      "converstaionId": 2,
+      "users": ["user1", "user3"],
+      "messages": [
+        {
+          "sender": "user1",
+          "message": "Hello",
+          "isSeen": true
+        },
+        {
+          "sender": "user3",
+          "message": "Hi",
+          "isSeen": false
+        }
+      ]
+    }
+  ]
+}
