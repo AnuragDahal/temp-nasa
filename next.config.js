@@ -1,4 +1,13 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+  reactStrictMode: true,
+  images: {
+    domains: [
+      "firebasestorage.googleapis.com",
+      "avatars.githubusercontent.com",
+      "github-profile-summary-cards.vercel.app",
+    ],
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
