@@ -1,7 +1,7 @@
 //add all nav links here
 
 import { BiSolidMessageSquareDetail } from "react-icons/bi";
-import { BsPlusCircleFill } from "react-icons/bs";
+import { BsFillChatLeftFill, BsPlusCircleFill } from "react-icons/bs";
 import { TbExternalLink } from "react-icons/tb";
 import { LuSearchCode } from "react-icons/lu";
 import { AiFillHome } from "react-icons/ai";
@@ -20,6 +20,11 @@ export const navLinks: NavLinks[] = [
     name: "Home",
     href: "/",
     linkIcon: <AiFillHome className={linkIconClassName} />,
+  },
+  {
+    name:"Inbox",
+    href:"/inbox",
+    linkIcon:  <BsFillChatLeftFill className={linkIconClassName} />
   },
   {
     name: "Explore",
