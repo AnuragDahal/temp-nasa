@@ -6,32 +6,21 @@ import { GoMail } from "react-icons/go";
 import { RiGroupLine } from "react-icons/ri";
 
 const ProfileCard = () => {
-  // const { userDetails } = useGlobalContext();
-  // const { name, username, photoUrl, bio, followers, following } = userDetails;
-  const userDetails = {
-    uid: "na0U5mkQgNUQh9DSrvOfcGhZLl82",
-    name: "jr Tilak",
-    photoUrl: "https://avatars.githubusercontent.com/u/106688422?v=4",
-    bio: "Tilak Thapa (jrtilak)\r\nCurrently studying Computer Engineering in IOE Purwanchal Campus and passionate about building captivating web apps in reactjs.",
-    following: 4,
-    followers: 1,
-    githubToken: "ghu_3F0wHBgnUm4N1nbnMRxEcdV7OTVrTA2d0CwX",
-    email: "iamjrtilak@gmail.com",
-    username: "jrTilak",
-  };
+  const { userDetails } = useGlobalContext();
+  const skills = ["HTML", "CSS", "TS", "Tailwind CSS", "React.js", "Next.js"];
   const { name, username, photoUrl, bio, followers, following, email } =
     userDetails;
   return (
-    <div className="border-black border-2 max-w-[310px] p-4 flex flex-col gap-2">
+    <div className=" max-w-[310px] p-4 flex flex-col gap-2">
       <Image
         className="w-56 h-56 rounded-full"
-        src={photoUrl}
+        src={photoUrl }
         alt="Rounded avatar"
         width={500}
         height={500}
       />
-      <h1 className="font-semibold text-2xl">{name}</h1>
-      <h3 className="font-light">@{username}</h3>
+      <h1 className="font-semibold text-2xl">{name || "Your Name"}</h1>
+      <h3 className="font-light">@{username || "username"}</h3>
       <p className="max-w-xs">{bio}</p>
       <button
         type="button"
@@ -42,9 +31,9 @@ const ProfileCard = () => {
       <div>
         <div className="inline-flex items-center gap-1">
           <RiGroupLine className="w-4 h-4" />
-          <span>{followers} followers</span>
+          <span>{followers || 0} followers</span>
           <LuDot className="w-4 h-4" />
-          <span>{following} following</span>
+          <span>{following || 0} following</span>
         </div>
         {email && (
           <div className="inline-flex items-center gap-1">
@@ -52,6 +41,15 @@ const ProfileCard = () => {
             <span>{email}</span>
           </div>
         )}
+      </div>
+      <div className="flex flex-wrap">
+        {skills.map((skill, index) => {
+          if (index < skills.length - 1) {
+            return <span> {skill},&nbsp; </span>;
+          } else {
+            return <span>{skill} </span>;
+          }
+        })}
       </div>
     </div>
   );
