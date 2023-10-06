@@ -11,8 +11,7 @@ import axios from "axios";
 import { useState } from "react";
 import { toast } from "react-toastify";
 
-const GithubLoginButton = () => {
-  const [isloggingIn, setIsLoggingIn] = useState(false);
+const GithubLoginButton = ({ isloggingIn, setIsLoggingIn }) => {
   const { setUserAuthDetails, setUserDetails, app, setIsUserLoggedIn } =
     useGlobalContext();
   const router = useRouter();
@@ -20,99 +19,102 @@ const GithubLoginButton = () => {
     const provider = new GithubAuthProvider();
     const auth = getAuth(app); // Pass the Firebase app instance to getAuth
 
-    signInWithPopup(auth, provider)
-      .then((result) => {
-        // This gives you a GitHub Access Token. You can use it to access the GitHub API.
-        const credential = GithubAuthProvider.credentialFromResult(result);
-        const token = credential?.accessToken;
+    signInWithPopup(auth, provider).then((result) => {
+      setIsLoggingIn(true);
+      // This gives you a GitHub Access Token. You can use it to access the GitHub API.
+      const credential = GithubAuthProvider.credentialFromResult(result);
+      const token = credential?.accessToken;
 
-        // The signed-in user info.
-        const user = result.user;
-        setUserAuthDetails({ ...user, githubToken: token });
-        console.log(user);
+      // The signed-in user info.
+      const user = result.user;
+      setUserAuthDetails({ ...user, githubToken: token });
+      console.log(user);
 
-        axios
-          .get("http://localhost:3000/api/users", {
-            headers: {
-              uid: user.uid,
-            },
-          })
-          .then((res) => {
-            if (res.data.status == 404) {
-              axios
-                .get(`https://api.github.com/user`, {
-                  headers: {
-                    Authorization: `token ${token}`,
-                  },
-                })
-                .then((githubData) => {
-                  console.log(githubData);
+      axios
+        .get("http://localhost:3000/api/users", {
+          headers: {
+            uid: user.uid,
+          },
+        })
+        .then((res) => {
+          if (res.data.status == 404) {
+            axios
+              .get(`https://api.github.com/user`, {
+                headers: {
+                  Authorization: `token ${token}`,
+                },
+              })
+              .then((githubData) => {
+                console.log(githubData);
 
-                  axios
-                    .post("http://localhost:3000/api/users", {
-                      uid: user.uid,
-                      name: user.displayName || "",
-                      email: user.email || "",
-                      photoUrl: user.photoURL || "",
-                      githubToken: token,
-                      bio: githubData.data.bio || "",
-                      username: githubData.data.login,
-                      followers: githubData.data.followers,
-                      following: githubData.data.following,
-                    })
-                    .then((res) => {
-                      setUserDetails((prev: any) => ({
-                        ...prev,
-                        ...{
-                          uid: user.uid,
-                          name: user.displayName || "",
-                          email: user.email || "",
-                          photoUrl: user.photoURL || "",
-                          githubToken: token,
-                          bio: githubData.data.bio || "",
-                          username: githubData.data.login,
-                          followers: githubData.data.followers,
-                          following: githubData.data.following,
-                        },
-                      }));
-
-                      if (!user.emailVerified) {
-                        sendEmailVerification(user).then(() => {
-                          toast.info(
-                            "Verification email is sent to your mailbox.",
-                            {
-                              position: "top-right",
-                              autoClose: 3000,
-                              hideProgressBar: false,
-                              closeOnClick: true,
-                              pauseOnHover: true,
-                              draggable: true,
-                              theme: "light",
-                            }
-                          );
-                        });
-                      }
-                    })
-                    .catch((err) => {
-                      toast.error("Some Error Occured, Try Again!", {
-                        position: "top-right",
-                        autoClose: 3000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                        theme: "light",
+                axios
+                  .post("http://localhost:3000/api/users", {
+                    uid: user.uid,
+                    name: user.displayName || "",
+                    email: user.email || "",
+                    photoUrl: user.photoURL || "",
+                    githubToken: token,
+                    bio: githubData.data.bio || "",
+                    username: githubData.data.login,
+                    followers: githubData.data.followers,
+                    following: githubData.data.following,
+                    loginMethod: "github",
+                  })
+                  .then((res) => {
+                    setUserDetails((prev: any) => ({
+                      ...prev,
+                      ...{
+                        uid: user.uid,
+                        name: user.displayName || "",
+                        email: user.email || "",
+                        photoUrl: user.photoURL || "",
+                        githubToken: token,
+                        bio: githubData.data.bio || "",
+                        username: githubData.data.login,
+                        followers: githubData.data.followers,
+                        following: githubData.data.following,
+                        loginMethod: "github",
+                      },
+                    }));
+                    router.push("/login/detailsForm");
+                    if (!user.emailVerified) {
+                      sendEmailVerification(user).then(() => {
+                        toast.info(
+                          "Verification email is sent to your mailbox.",
+                          {
+                            position: "top-right",
+                            autoClose: 3000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            theme: "light",
+                          }
+                        );
                       });
+                    }
+                  })
+                  .catch((err) => {
+                    toast.error("Some Error Occured, Try Again!", {
+                      position: "top-right",
+                      autoClose: 3000,
+                      hideProgressBar: false,
+                      closeOnClick: true,
+                      pauseOnHover: true,
+                      draggable: true,
+                      progress: undefined,
+                      theme: "light",
                     });
-                });
-            } else {
-              setUserDetails((prev: any) => ({
-                ...prev,
-                ...res.data,
-              }));
-            }
+                  });
+              });
+          } else {
+            setUserDetails((prev: any) => ({
+              ...prev,
+              ...res.data,
+            }));
+
             setIsLoggingIn(false);
+            setIsUserLoggedIn(true);
             toast.success("Login Successful! 🔥", {
               position: "top-right",
               autoClose: 3000,
@@ -122,34 +124,22 @@ const GithubLoginButton = () => {
               draggable: true,
               theme: "light",
             });
-            setIsUserLoggedIn(true);
             router.push("/");
-          })
-          .catch((err) => {
-            toast.error("Login Failed!", {
-              position: "top-right",
-              autoClose: 3000,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              progress: undefined,
-              theme: "light",
-            });
+          }
+        })
+        .catch((error) => {
+          toast.error("Some Error Occured, Try Again!", {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
           });
-      })
-      .catch((error) => {
-        toast.error("Some Error Occured, Try Again!", {
-          position: "top-right",
-          autoClose: 3000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
         });
-      });
+    });
   };
 
   return (

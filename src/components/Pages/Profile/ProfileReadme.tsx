@@ -5,7 +5,7 @@ const ProfileReadme = () => {
   const { userDetails } = useGlobalContext();
   const { username } = userDetails;
   return (
-    <div className="border-2 p-4 rounded-lg min-w-[50%] min-h-[50vh]">
+    <div className="border-2 p-4 rounded-lg min-w-[50%] min-h-[10vh]">
       <div className="text-sm font-extralight font-mono">
         {username || "username"}/PROFILE.md
       </div>
@@ -30,7 +30,7 @@ const ProfileReadme = () => {
         </div>
       ) : (
         <div className="flex justify-center mx-auto mt-10">
-          <span>Some error occured...</span>
+          <span>Login with github to see github stats..</span>
         </div>
       )}
     </div>
