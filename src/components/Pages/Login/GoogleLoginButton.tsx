@@ -10,24 +10,29 @@ import {
 import { toast } from "react-toastify";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 
-const GoogleLoginButton = () => {
+const GoogleLoginButton = ({
+  isloggingIn,
+  setIsLoggingIn,
+}) => {
   const router = useRouter();
   const { setUserAuthDetails, setUserDetails, app, setIsUserLoggedIn } =
     useGlobalContext();
-  const [isloggingIn, setIsLoggingIn] = useState(false);
 
   const handleGoogleLogin = () => {
     const provider = new GoogleAuthProvider();
     const auth = getAuth(app);
     signInWithPopup(auth, provider)
       .then((result) => {
-        // This gives you a Google Access Token. You can use it to access the Google API.
+        // This gives you a Google Access Token. You can use it to access the Google API
+        setIsLoggingIn(true);
+
         const credential = GoogleAuthProvider.credentialFromResult(result);
-        const token = credential.accessToken;
+        const token = credential?.accessToken;
         // The signed-in user info.
         const user = result.user;
-        setUserAuthDetails({ ...user, githubToken: token });
+        setUserAuthDetails({ ...user, accessToken: token });
         console.log(user);
 
         axios
@@ -41,20 +46,22 @@ const GoogleLoginButton = () => {
               axios
                 .post("http://localhost:3000/api/users", {
                   uid: user.uid,
-                  name: user.displayName || "",
-                  email: user.email || "",
+                  name: user.displayName ,
+                  email: user.email ,
                   photoUrl: user.photoURL || "",
                   googleToken: token,
+                  loginMethod: "google",
                 })
                 .then((res) => {
                   setUserDetails((prev: any) => ({
                     ...prev,
                     ...{
                       uid: user.uid,
-                      name: user.displayName || "",
-                      email: user.email || "",
+                      name: user.displayName ,
+                      email: user.email ,
                       photoUrl: user.photoURL || "",
                       googleToken: token,
+                      loginMethod: "google",
                     },
                   }));
 
@@ -75,24 +82,25 @@ const GoogleLoginButton = () => {
                     });
                   }
                 });
+              router.push("/login/detailsForm");
             } else {
               setUserDetails((prev: any) => ({
                 ...prev,
                 ...res.data,
               }));
+              setIsLoggingIn(false);
+              setIsUserLoggedIn(true);
+              router.push("/");
+              toast.success("Login Successful! 🔥", {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                theme: "light",
+              });
             }
-            setIsLoggingIn(false);
-            toast.success("Login Successful! 🔥", {
-              position: "top-right",
-              autoClose: 3000,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              theme: "light",
-            });
-            setIsUserLoggedIn(true);
-            router.push("/");
           });
       })
       .catch((error) => {
