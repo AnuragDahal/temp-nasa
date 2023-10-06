@@ -40,7 +40,7 @@ export async function GET(req: Request) {
       if (queryUser) {
         return Response.json(queryUser);
       } else {
-        return Response.json({ status: 404, error: "No such document!" });
+        return Response.json({ status: 404, error: "No such user!" });
       }
 
     }
@@ -48,3 +48,27 @@ export async function GET(req: Request) {
     return Response.json({ status: 400, error: e });
   }
 }
+
+
+// export async function PUT(req: Request) {
+//   const db = getFirestore(app);
+//   const userData = await req
+//     .json()
+//     .then((data) => {
+//       return data;
+//     })
+//     .catch((e) => {
+//       return Response.json({ status: 400, error: e });
+//     });
+//   try {
+//     const docRef = await addDoc(collection(db, "users"), userData);
+
+
+
+
+    
+//     return Response.json({ status: 200, userId: docRef.id });
+//   } catch (e) {
+//     return Response.json({ status: 404, error: e });
+//   }
+// }
