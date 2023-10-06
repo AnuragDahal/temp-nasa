@@ -1,0 +1,190 @@
+[
+    {
+        "value": "Research",
+        "label": "Research"
+    },
+    {
+        "value": "Analysis",
+        "label": "Analysis"
+    },
+    {
+        "value": "Design",
+        "label": "Design"
+    },
+    {
+        "value": "Lab Techniques",
+        "label": "Lab Techniques"
+    },
+    {
+        "value": "Fieldwork",
+        "label": "Fieldwork"
+    },
+    {
+        "value": "Statistics",
+        "label": "Statistics"
+    },
+    {
+        "value": "Data Collection",
+        "label": "Data Collection"
+    },
+    {
+        "value": "Biodiversity",
+        "label": "Biodiversity"
+    },
+    {
+        "value": "Climate Modeling",
+        "label": "Climate Modeling"
+    },
+    {
+        "value": "Monitoring",
+        "label": "Monitoring"
+    },
+    {
+        "value": "GIS",
+        "label": "GIS"
+    },
+    {
+        "value": "Visualization",
+        "label": "Visualization"
+    },
+    {
+        "value": "Communication",
+        "label": "Communication"
+    },
+    {
+        "value": "Writing",
+        "label": "Writing"
+    },
+    {
+        "value": "Impact Assessment",
+        "label": "Impact Assessment"
+    },
+    {
+        "value": "Modeling",
+        "label": "Modeling"
+    },
+    {
+        "value": "Genomics",
+        "label": "Genomics"
+    },
+    {
+        "value": "Microscopy",
+        "label": "Microscopy"
+    },
+    {
+        "value": "Sampling",
+        "label": "Sampling"
+    },
+    {
+        "value": "Identification",
+        "label": "Identification"
+    },
+    {
+        "value": "Wet Lab",
+        "label": "Wet Lab"
+    },
+    {
+        "value": "Data Management",
+        "label": "Data Management"
+    },
+    {
+        "value": "Mitigation",
+        "label": "Mitigation"
+    },
+    {
+        "value": "Soil Analysis",
+        "label": "Soil Analysis"
+    },
+    {
+        "value": "Oceanography",
+        "label": "Oceanography"
+    },
+    {
+        "value": "Ecology",
+        "label": "Ecology"
+    },
+    {
+        "value": "Chemistry",
+        "label": "Chemistry"
+    },
+    {
+        "value": "Policy",
+        "label": "Policy"
+    },
+    {
+        "value": "Conservation",
+        "label": "Conservation"
+    },
+    {
+        "value": "Adaptation",
+        "label": "Adaptation"
+    },
+    {
+        "value": "Ethics",
+        "label": "Ethics"
+    },
+    {
+        "value": "Restoration",
+        "label": "Restoration"
+    },
+    {
+        "value": "Assessment",
+        "label": "Assessment"
+    },
+    {
+        "value": "Sustainability",
+        "label": "Sustainability"
+    },
+    {
+        "value": "Climate Data",
+        "label": "Climate Data"
+    },
+    {
+        "value": "Conservation",
+        "label": "Conservation"
+    },
+    {
+        "value": "Education",
+        "label": "Education"
+    },
+    {
+        "value": "Advocacy",
+        "label": "Advocacy"
+    },
+    {
+        "value": "Bioinformatics",
+        "label": "Bioinformatics"
+    },
+    {
+        "value": "Geospatial",
+        "label": "Geospatial"
+    },
+    {
+        "value": "Impact Analysis",
+        "label": "Impact Analysis"
+    },
+    {
+        "value": "Data Collection",
+        "label": "Data Collection"
+    },
+    {
+        "value": "Climate Communication",
+        "label": "Climate Communication"
+    },
+    {
+        "value": "Safety",
+        "label": "Safety"
+    },
+    {
+        "value": "Ethics",
+        "label": "Ethics"
+    },
+    {
+        "value": "Ecosystem",
+        "label": "Ecosystem"
+    },
+    {
+        "value": "Outreach",
+        "label": "Outreach"
+    }
+]

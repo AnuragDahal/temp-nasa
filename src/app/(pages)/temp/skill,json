@@ -1,0 +1,247 @@
+[
+    {
+        "value":"Python",
+        "label":"Python"
+    },
+    {
+        "value":"JavaScript",
+        "label":"JavaScript"
+    },
+    {
+
+        "value": "Java",
+        "label": "Java"
+    },
+    {
+        "value": "C++",
+        "label": "C++"
+    },
+    {
+        "value": "Ruby",
+        "label": "Ruby"
+    },
+    {
+        "value": "PHP",
+        "label": "PHP"
+    },
+    {
+        "value": "Swift",
+        "label": "Swift"
+    },
+    {
+        "value": "Go",
+        "label": "Go"
+    },
+    {
+        "value": "Rust",
+        "label": "Rust"
+    },
+    {
+        "value": "TypeScript",
+        "label": "TypeScript"
+    },
+    {
+        "value": "Git",
+        "label": "Git"
+    },
+    {
+        "value": "GitHub",
+        "label": "GitHub"
+    },
+    {
+        "value": "GitLab",
+        "label": "GitLab"
+    },
+    {
+        "value": "Bitbucket",
+        "label": "Bitbucket"
+    },
+    {
+        "value": "Slack",
+        "label": "Slack"
+    },
+    {
+        "value": "Discord",
+        "label": "Discord"
+    },
+    {
+        "value": "JIRA",
+        "label": "JIRA"
+    },
+    {
+        "value": "Trello",
+        "label": "Trello"
+    },
+    {
+        "value": "Bug triaging",
+        "label": "Bug triaging"
+    },
+    {
+        "value": "Issue management",
+        "label": "Issue management"
+    },
+    {
+        "value": "Reviewing pull requests",
+        "label": "Reviewing pull requests"
+    },
+    {
+        "value": "Providing constructive feedback",
+        "label": "Providing constructive feedback"
+    },
+    {
+        "value": "Unit testing",
+        "label": "Unit testing"
+    },
+    {
+        "value": "Integration testing",
+        "label": "Integration testing"
+    },
+    {
+        "value": "Test automation",
+        "label": "Test automation"
+    },
+    {
+        "value": "Writing clear and concise documentation",
+        "label": "Writing clear and concise documentation"
+    },
+    {
+        "value": "Creating README files",
+        "label": "Creating README files"
+    },
+    {
+        "value": "Participating in discussions",
+        "label": "Participating in discussions"
+    },
+    {
+        "value": "Helping others in the community",
+        "label": "Helping others in the community"
+    },
+    {
+        "value": "Agile methodologies",
+        "label": "Agile methodologies"
+    },
+    {
+        "value": "Scrum",
+        "label": "Scrum"
+    },
+    {
+        "value": "Kanban",
+        "label": "Kanban"
+    },
+    {
+        "value": "Effective written and verbal communication",
+        "label": "Effective written and verbal communication"
+    },
+    {
+        "value": "Active listening",
+        "label": "Active listening"
+    },
+    {
+        "value": "Analytical thinking",
+        "label": "Analytical thinking"
+    },
+    {
+        "value": "Troubleshooting skills",
+        "label": "Troubleshooting skills"
+    },
+    {
+        "value": "Understanding of open-source licenses (e.g., GPL, MIT)",
+        "label": "Understanding of open-source licenses (e.g., GPL, MIT)"
+    },
+    {
+        "value": "Jenkins",
+        "label": "Jenkins"
+    },
+    {
+        "value": "Travis CI",
+        "label": "Travis CI"
+    },
+    {
+        "value": "CircleCI",
+        "label": "CircleCI"
+    },
+    {
+        "value": "Identifying and addressing security vulnerabilities",
+        "label": "Identifying and addressing security vulnerabilities"
+    },
+    {
+        "value": "HTML/CSS",
+        "label": "HTML/CSS"
+    },
+    {
+        "value": "React",
+        "label": "React"
+    },
+    {
+        "value": "Angular",
+        "label": "Angular"
+    },
+    {
+        "value": "Node.js",
+        "label": "Node.js"
+    },
+    {
+        "value": "Django",
+        "label": "Django"
+    },
+    {
+        "value": "Docker",
+        "label": "Docker"
+    },
+    {
+        "value": "Kubernetes",
+        "label": "Kubernetes"
+    },
+    {
+        "value": "AWS",
+        "label": "AWS"
+    },
+    {
+        "value": "Azure",
+        "label": "Azure"
+    },
+    {
+        "value": "Google Cloud",
+        "label": "Google Cloud"
+    },
+    {
+        "value": "SQL",
+        "label": "SQL"
+    },
+    {
+        "value": "NoSQL (e.g., MongoDB)",
+        "label": "NoSQL (e.g., MongoDB)"
+    },
+    {
+        "value": "TensorFlow",
+        "label": "TensorFlow"
+    },
+    {
+        "value": "PyTorch",
+        "label": "PyTorch"
+    },
+    {
+        "value": "User interface design",
+        "label": "User interface design"
+    },
+    {
+        "value": "User experience design",
+        "label": "User experience design"
+    },
+    {
+        "value": "Ensuring software is accessible to all users",
+        "label": "Ensuring software is accessible to all users"
+    },
+    {
+        "value": "Translating software into multiple languages",
+        "label": "Translating software into multiple languages"
+    },
+    {
+        "value": "Command-line skills",
+        "label": "Command-line skills"
+    },
+    {
+        "value": "Shell scripting",
+        "label": "Shell scripting"
+    }
+]
